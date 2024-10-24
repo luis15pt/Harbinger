@@ -27,8 +27,8 @@ A vigilant messenger that watches over your Docker containers and reports their 
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/luissarabando/harbinger.git
-cd harbinger
+git clone https://github.com/luis15pt/Harbinger.git
+cd Harbinger
 ```
 
 2. **Install dependencies**
@@ -94,7 +94,7 @@ Type=simple
 User=root
 Group=docker
 Environment=PYTHONUNBUFFERED=1
-WorkingDirectory=/path/to/harbinger
+WorkingDirectory=/path/to/Harbinger
 ExecStart=/usr/bin/python3 harbinger.py
 Restart=always
 RestartSec=10
