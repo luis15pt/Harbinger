@@ -73,11 +73,11 @@ Harbinger provides detailed, color-coded notifications for various container eve
 - 🟢 Container starts
 <img src="docs/images/start-notification.png" width="400" alt="Container Start">
 - 🔴 Container exits (with error codes)
-![Container Exit Notification](docs/images/error-notification.png)
+<img src="docs/images/error-notification.png" width="400" alt="Container Error">
 - 💀 Container kills
-![Container Exit Notification](docs/images/stop-notification.png)
+<img src="docs/images/stop-notification.png" width="400" alt="Container Stop">
 - 🔄 Container restarts
-![Container Exit Notification](docs/images/restart-notification.png)
+
 
 ## 🛠️ Running as a Service
 
