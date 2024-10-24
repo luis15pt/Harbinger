@@ -71,9 +71,13 @@ LOG_LINES=5
 Harbinger provides detailed, color-coded notifications for various container events:
 
 - 🟢 Container starts
+![Container Start Notification](docs/images/start-notification.png)
 - 🔴 Container exits (with error codes)
+![Container Exit Notification](docs/images/error-notification.png)
 - 💀 Container kills
+![Container Exit Notification](docs/images/stop-notification.png)
 - 🔄 Container restarts
+![Container Exit Notification](docs/images/restart-notification.png)
 
 ## 🛠️ Running as a Service
 

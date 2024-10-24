@@ -1,0 +1,18 @@
+[Unit]
+Description=Harbinger Docker Monitor
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=root
+Group=docker
+Environment=PYTHONUNBUFFERED=1
+#Change to your directory
+WorkingDirectory=/home/ubuntu/Harbinger
+ExecStart=/usr/bin/python3 harbinger.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

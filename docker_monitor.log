@@ -1,0 +1,17 @@
+2024-10-24 22:11:09,248 - __main__ - INFO - Loaded configuration from .env file
+2024-10-24 22:11:09,248 - __main__ - INFO - Loaded webhook URL: https://hooks.slack.com/services/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
+2024-10-24 22:11:09,248 - __main__ - INFO - Successfully loaded Slack webhook URL
+2024-10-24 22:11:09,248 - __main__ - INFO - Current configuration:
+2024-10-24 22:11:09,248 - __main__ - INFO - Hostname: Home-DockerVM
+2024-10-24 22:11:09,248 - __main__ - INFO - Environment: production
+2024-10-24 22:11:09,248 - __main__ - INFO - Log lines: 5
+2024-10-24 22:11:09,251 - __main__ - INFO - Successfully connected to Docker daemon on Home-DockerVM
+2024-10-24 22:11:09,251 - __main__ - INFO - Starting Docker container monitoring on Home-DockerVM...
+2024-10-24 22:11:24,721 - __main__ - INFO - Notification sent for uptime-kuma: killed
+2024-10-24 22:11:32,525 - __main__ - INFO - Notification sent for uptime-kuma: stopped
+2024-10-24 22:11:32,815 - __main__ - INFO - Notification sent for uptime-kuma: exited
+2024-10-24 22:11:42,245 - __main__ - INFO - Notification sent for uptime-kuma: started
+2024-10-24 22:12:17,567 - __main__ - INFO - Notification sent for test-logs: started
+2024-10-24 22:12:17,901 - __main__ - INFO - Notification sent for test-logs: exited
+2024-10-24 22:13:52,745 - __main__ - INFO - Notification sent for test-oom: started
+2024-10-24 22:13:53,034 - __main__ - INFO - Notification sent for test-oom: exited
