@@ -120,6 +120,110 @@ Harbinger automatically detects and provides additional context for docker-compo
 - Container relationships
 - Compose-specific events
 
+## 🧪 Testing the Alert System
+
+After setting up Harbinger, you can verify it's working correctly using these test scenarios:
+
+### Basic Container Test
+```bash
+# Start a test container that exits immediately
+docker run --name test-container alpine echo "Hello Harbinger!"
+# This will trigger both START and EXIT notifications
+```
+
+### Test Container with Logs
+```bash
+# Run a container that generates multiple log lines
+docker run --name test-logs alpine sh -c '
+    echo "Starting application..."
+    echo "Loading configuration..."
+    echo "Simulating error..."
+    exit 1
+'
+# This will show EXIT notification with logs
+```
+
+### Test Container Crash
+```bash
+# Simulate a container crash with error code
+docker run --name test-crash alpine sh -c '
+    echo "Running..."
+    sleep 1
+    echo "About to crash..."
+    kill -9 1
+'
+# This will trigger an error exit notification
+```
+
+### Docker Compose Test
+```bash
+# Create a test docker-compose.yml file
+cat << EOF > test-compose.yml
+version: '3'
+services:
+  web:
+    image: nginx
+    ports:
+      - "8080:80"
+EOF
+
+# Start the service
+docker-compose -f test-compose.yml up -d
+
+# Wait a few seconds, then stop it
+docker-compose -f test-compose.yml down
+```
+
+### Memory Limit Test
+```bash
+# Test container with memory limit
+docker run --name test-oom \
+    --memory=10m \
+    alpine sh -c 'cat /dev/zero > /dev/null'
+# This will trigger an OOM (Out of Memory) exit
+```
+
+### Container Kill Test
+```bash
+# Start a container
+docker run -d --name test-kill alpine sleep 3600
+
+# Wait a moment, then kill it
+docker kill test-kill
+# This will show a KILLED notification
+```
+
+### Cleanup
+```bash
+# Remove all test containers
+docker rm -f test-container test-logs test-crash test-oom test-kill 2>/dev/null
+
+# Remove test compose file
+rm test-compose.yml
+```
+
+Each test will generate different types of notifications in Slack, allowing you to verify:
+- 📥 Container start notifications
+- 📤 Clean exit notifications
+- ❌ Error notifications with logs
+- 💾 Memory limit violations
+- 🚫 Container kill events
+- 🐳 Docker Compose events
+
+Expected Notifications:
+- Start events will show green indicators
+- Clean exits will show normal status
+- Error exits will show red indicators with logs
+- OOM kills will show error status with memory information
+- Compose events will include service context
+
+Monitor the logs while testing:
+```bash
+# Watch Harbinger logs
+sudo journalctl -u harbinger -f
+```
+
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
