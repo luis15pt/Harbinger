@@ -31,12 +31,7 @@ git clone https://github.com/luis15pt/Harbinger.git
 cd Harbinger
 ```
 
-2. **Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-3. **Configure environment variables**
+2. **Configure environment variables**
 ```bash
 # Create .env file
 cp .env.example .env
@@ -45,9 +40,9 @@ cp .env.example .env
 vim .env
 ```
 
-4. **Run as a service**
+3. **Run as a service**
 ```bash
-# Copy service file
+# Copy service file, make sure to change the path to the script
 sudo cp harbinger.service /etc/systemd/system/
 
 # Enable and start service
