@@ -52,6 +52,16 @@ sudo systemctl enable harbinger
 sudo systemctl start harbinger
 ```
 
+
+3. **Check if its running**
+```bash
+#Check the logs
+sudo journalctl -u harbinger -f
+```
+
+
+
+
 ## ⚙️ Configuration
 
 Create a `.env` file with the following variables:
