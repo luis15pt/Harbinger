@@ -42,7 +42,9 @@ vim .env
 
 3. **Run as a service**
 ```bash
-# Copy service file, make sure to change the path to the script
+#make sure to change the path to the script
+vim harbinger.service
+# Copy service file
 sudo cp harbinger.service /etc/systemd/system/
 
 # Enable and start service
