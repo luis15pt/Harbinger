@@ -29,6 +29,8 @@ A vigilant messenger that watches over your Docker containers and reports their 
 ```bash
 git clone https://github.com/luis15pt/Harbinger.git
 cd Harbinger
+sudo apt install python3-pip
+sudo pip3 install -r requirements.txt
 ```
 
 2. **Configure environment variables**
